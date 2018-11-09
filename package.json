@@ -1,9 +1,10 @@
 {
   "name": "extra-ffmpeg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Decode, encode, transcode, mux, demux, stream, filter, and play media through machine (via \"ffmpeg\").",
   "main": "index.js",
   "scripts": {
+    "install": "node install",
     "test": "exit"
   },
   "repository": {
