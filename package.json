@@ -1,0 +1,36 @@
+{
+  "name": "extra-ffmpeg",
+  "version": "0.0.1",
+  "description": "Decode, encode, transcode, mux, demux, stream, filter, and play media through machine (via \"ffmpeg\").",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/extra-ffmpeg.git"
+  },
+  "keywords": [
+    "extra",
+    "ffmpeg",
+    "decode",
+    "encode",
+    "transcode",
+    "mux",
+    "demux",
+    "stream",
+    "filter",
+    "play",
+    "media",
+    "machine",
+    "multimedia",
+    "framework",
+    "merferry"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodef/extra-ffmpeg/issues"
+  },
+  "homepage": "https://github.com/nodef/extra-ffmpeg#readme"
+}
