@@ -14,7 +14,7 @@ const STDIO = [0, 1, 2];
     for(var k in o) {
       if(o[k]==null) continue;
       if(k==='stdio') continue;
-      if(k==='o' || k==='outfile') z += `"${o[k]}"`;
+      if(k==='o' || k==='outfile') z += ` "${o[k]}"`;
       else if(typeof o[k]==='boolean') z += o[k]? ` -${k}`:'';
       else z += ` -${k} ${JSON.stringify(o[k])}`;
     }
