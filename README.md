@@ -24,7 +24,7 @@ ffmpeg.sync([
 ```
 
 
-[![Merferry](https://i.imgur.com/HS08T0y.jpg)](https://merferry.github.io)
+[![Merferry](https://i.imgur.com/TmCUtnA.jpg)](https://merferry.github.io)
 
 ["ffmpeg"]: https://ffmpeg.org
 [setup-ffmpeg]: https://www.npmjs.com/package/setup-ffmpeg
