@@ -7,19 +7,17 @@ const STDIO = [0, 1, 2];
 
 // Generate command for ffmpeg.
 function command(os) {
-var z = 'ffmpeg';
-var os = os||[];
-for(var o of os) {
-  var o = o||{};
-  for(var k in o) {
-    if(o[k]==null) continue;
-    if(k==='stdio') continue;
-    if(k==='o' || k==='outfile') z += ` "${o[k]}"`;
-    else if(typeof o[k]==='boolean') z += o[k]? ` -${k}`:'';
-    else z += ` -${k} ${JSON.stringify(o[k])}`;
+  var file = 'ffmpeg', args = [];
+  for(var o of os||[]) {
+    for(var k in o||{}) {
+      if(o[k]==null) continue;
+      if(k==='stdio') continue;
+      if(k==='o' || k==='outfile') args.push(o[k]);
+      else if(typeof o[k]==='boolean' && o[k]) args.push('-'+k);
+      else args.push('-'+k, JSON.stringify(o[k]));
+    }
   }
-}
-return z;
+  return {file, args};
 }
 
 /**
@@ -28,7 +26,8 @@ return z;
  */
 function sync(os) {
   var stdio = os.stdio===undefined? STDIO:os.stdio;
-  return cp.execSync(command(os), {stdio});
+  var {file, args} = command(os);
+  return cp.execFileSync(file, args, {stdio});
 }
 
 /**
@@ -37,7 +36,8 @@ function sync(os) {
  */
 function ffmpeg(os) {
   var stdio = os.stdio===undefined? STDIO:os.stdio;
-  return new Promise((fres, frej) => cp.exec(command(os), {stdio}, (err, stdout, stderr) => {
+  var {file, args} = command(os);
+  return new Promise((fres, frej) => cp.execFile(file, args, {stdio}, (err, stdout, stderr) => {
     if(err) frej(err);
     else fres({stdout, stderr});
   }));
