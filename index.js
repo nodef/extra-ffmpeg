@@ -14,7 +14,7 @@ function command(os) {
       if(k==='stdio') continue;
       if(k==='o' || k==='outfile') args.push(o[k]);
       else if(typeof o[k]==='boolean' && o[k]) args.push('-'+k);
-      else args.push('-'+k, JSON.stringify(o[k]));
+      else args.push('-'+k, ''+o[k]);
     }
   }
   return {file, args};

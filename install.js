@@ -6,7 +6,7 @@ function cpRun(txt) {
   try { cp.execSync(txt, {stdio: []}); }
   catch(e) { return false; }
   return true;
-};
+}
 
 // Setup "ffmpeg".
 function setup() {
@@ -16,5 +16,5 @@ function setup() {
   }
   console.log('extra: Using setup-ffmpeg');
   cp.execSync('npm install -g setup-ffmpeg', {stdio: [0, 1, 2]});
-};
+}
 setup();
