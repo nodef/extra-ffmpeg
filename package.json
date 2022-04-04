@@ -1,11 +1,19 @@
 {
   "name": "extra-ffmpeg",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "Decode, encode, transcode, mux, demux, stream, filter, and play media through machine (via \"ffmpeg\").",
   "main": "index.js",
+  "module": "index.mjs",
+  "sideEffects": false,
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
   "scripts": {
-    "install": "node install",
-    "test": "exit"
+    "test": "exit",
+    "build": "node ./build",
+    "deploy": "node ./build deploy",
+    "install": "node install"
   },
   "repository": {
     "type": "git",
@@ -23,7 +31,6 @@
     "filter",
     "play",
     "media",
-    "machine",
     "multimedia",
     "framework"
   ],
@@ -34,6 +41,11 @@
   },
   "homepage": "https://github.com/nodef/extra-ffmpeg#readme",
   "devDependencies": {
-    "@types/node": "^17.0.23"
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@types/node": "^17.0.23",
+    "extra-build": "^2.0.29",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-dts": "^4.2.0"
   }
 }
