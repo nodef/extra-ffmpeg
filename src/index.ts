@@ -1,4 +1,4 @@
-const cp = require('child_process');
+import * as cp from "child_process";
 
 
 // Global variables.

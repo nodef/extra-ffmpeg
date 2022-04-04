@@ -1,6 +1,6 @@
 {
   "name": "extra-ffmpeg",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "description": "Decode, encode, transcode, mux, demux, stream, filter, and play media through machine (via \"ffmpeg\").",
   "main": "index.js",
   "scripts": {
@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/nodef/extra-ffmpeg/issues"
   },
-  "homepage": "https://github.com/nodef/extra-ffmpeg#readme"
+  "homepage": "https://github.com/nodef/extra-ffmpeg#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
 }
